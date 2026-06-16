@@ -16,10 +16,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onBack }) => {
     setError(null);
     try {
       // Fetch the counter value
-      const res = await fetch('https://api.counterapi.dev/v1/projects/converto-amendola/counters/visits');
+      const res = await fetch('https://api.counterapi.dev/v1/converto-amendola/visits/');
       if (!res.ok) throw new Error('Impossibile recuperare il conteggio');
       const data = await res.json();
-      setCount(data.value || 0);
+      setCount(data.count || 0);
     } catch (err: any) {
       setError(err.message || 'Errore di rete');
     } finally {

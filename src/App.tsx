@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const hasVisited = sessionStorage.getItem('converto_visited');
     if (!hasVisited) {
-      fetch('https://api.counterapi.dev/v1/projects/converto-amendola/counters/visits/up')
+      fetch('https://api.counterapi.dev/v1/converto-amendola/visits/up')
         .then(() => {
           sessionStorage.setItem('converto_visited', 'true');
         })
