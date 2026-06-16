@@ -139,7 +139,7 @@ function App() {
       <footer className="relative z-10 w-full border-t border-white/5 bg-brand-bg/50 backdrop-blur-md py-6">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <div>
-            &copy; {new Date().getFullYear()} Pierfrancesco Amendola - Converto. Tutti i diritti riservati.
+            &copy; {new Date().getFullYear()} <a href="https://www.linkedin.com/in/pierfrancesco-amendola-0952a729a/" target="_blank" rel="noopener noreferrer" className="text-inherit hover:text-gray-300 no-underline cursor-pointer transition-colors">Pierfrancesco Amendola</a> - Converto. Tutti i diritti riservati.
           </div>
           <div className="flex items-center gap-4">
             <button 
