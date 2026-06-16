@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Image as ImageIcon, FileText, ArrowRight, Sparkles } from 'lucide-react';
 
@@ -7,6 +7,18 @@ interface ModeSelectorProps {
 }
 
 export const ModeSelector: React.FC<ModeSelectorProps> = ({ onSelectMode }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="w-full max-w-5xl mx-auto flex flex-col items-center justify-center min-h-[70dvh] px-4 relative z-10">
       
@@ -33,8 +45,8 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({ onSelectMode }) => {
         
         {/* Card 1: Images */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={isMobile ? { opacity: 0, y: 30 } : { opacity: 0, x: -30 }}
+          animate={isMobile ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -6, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.98 }}
@@ -64,8 +76,8 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({ onSelectMode }) => {
 
         {/* Card 2: Files/Documents */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={isMobile ? { opacity: 0, y: 30 } : { opacity: 0, x: 30 }}
+          animate={isMobile ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           whileHover={{ y: -6, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.98 }}
