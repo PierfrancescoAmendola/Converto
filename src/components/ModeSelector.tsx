@@ -33,9 +33,9 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({ onSelectMode }) => {
         
         {/* Card 1: Images */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -6, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.98 }}
           onClick={() => onSelectMode('image')}
@@ -64,9 +64,9 @@ export const ModeSelector: React.FC<ModeSelectorProps> = ({ onSelectMode }) => {
 
         {/* Card 2: Files/Documents */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 12 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -6, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.98 }}
           onClick={() => onSelectMode('file')}

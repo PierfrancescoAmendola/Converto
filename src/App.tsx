@@ -71,10 +71,10 @@ function App() {
           {view === 'selector' && (
             <motion.div
               key="selector"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="w-full"
             >
               <ModeSelector onSelectMode={(mode) => setView(mode)} />
@@ -84,10 +84,10 @@ function App() {
           {(view === 'image' || view === 'file') && (
             <motion.div
               key="workbench"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="w-full"
             >
               <ConverterWorkbench mode={view} onBack={() => setView('selector')} />
@@ -97,10 +97,10 @@ function App() {
           {view === 'privacy' && (
             <motion.div
               key="privacy"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="w-full"
             >
               <PrivacyPolicy onBack={() => setView('selector')} />
@@ -110,10 +110,10 @@ function App() {
           {view === 'terms' && (
             <motion.div
               key="terms"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="w-full"
             >
               <TermsOfService onBack={() => setView('selector')} />
@@ -123,10 +123,10 @@ function App() {
           {view === 'admin' && (
             <motion.div
               key="admin"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="w-full"
             >
               <AdminPanel onBack={() => setView('selector')} />
